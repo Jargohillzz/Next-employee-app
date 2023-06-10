@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Before the app can work, you will need to add the .env.local file with MONGO_URI
+
 First, run the development server:
 
 ```bash
