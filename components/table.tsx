@@ -27,7 +27,7 @@ const Table = () => {
     return <div>Got Errors, try refreshing...</div>;
   }
   return (
-    <table className="min-w-full table-auto scale-75 origin-left overflow-hidden md:scale-100">
+    <table className="min-w-full table-auto scale-75 origin-top-left overflow-hidden md:scale-100">
       <thead>
         <tr className="bg-gray-700">
           <th className="py-2 min-w-[230px]">
