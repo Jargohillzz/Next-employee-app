@@ -8,17 +8,8 @@ export type FormData = {
   email: string;
   salary: number;
   birthday: string;
-  status: string;
+  status?: string | null;
   avatar: string;
-};
-
-type ItemProp = {
-  name: string;
-  avatar: string;
-  email: string;
-  salary: number;
-  date: string;
-  status: string;
 };
 
 type Store = {
@@ -44,7 +35,7 @@ const useUserStore = create<Store>((set, get) => ({
     email: "",
     salary: 0,
     birthday: "",
-    status: "",
+    status: null,
     avatar: "",
   },
   data: [],
@@ -85,7 +76,7 @@ const useUserStore = create<Store>((set, get) => ({
         firstname: "",
         lastname: "",
         salary: 0,
-        status: "",
+        status: null,
         avatar: "",
       },
     }));
@@ -123,7 +114,7 @@ const useUserStore = create<Store>((set, get) => ({
       email,
       name: firstname + " " + lastname,
       salary,
-      status,
+      status: status ?? null,
     };
   },
 }));

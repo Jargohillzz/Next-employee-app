@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import { BiTrashAlt, BiEdit } from "react-icons/bi";
 import { deleteUser, fetchUsers } from "./fetchers";
 import { useMutation, useQuery, useQueryClient } from "react-query";
@@ -24,10 +24,10 @@ const Table = () => {
     return <h1>Loading...</h1>;
   }
   if (isError) {
-    return <div>Got Errors</div>;
+    return <div>Got Errors, try refreshing...</div>;
   }
   return (
-    <table className="min-w-full table-auto">
+    <table className="min-w-full table-auto scale-75 origin-left overflow-hidden md:scale-100">
       <thead>
         <tr className="bg-gray-700">
           <th className="py-2 min-w-[230px]">
@@ -57,12 +57,13 @@ const Table = () => {
             <tr className="bg-gray-200" key={_id}>
               <td className="py-8 bg-gray-400 grid place-items-center">
                 <span className="flex">
-                  <img
-                    src={avatar || "#"}
+                  <Image
+                    loader={() => avatar}
+                    src={avatar}
                     height={24}
                     width={24}
                     alt="employee image"
-                    className="pr-2"
+                    className="pr-2 rounded-full object-contain"
                   />
                   <span className="">{name}</span>
                 </span>

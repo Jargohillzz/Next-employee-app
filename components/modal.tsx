@@ -22,8 +22,8 @@ const schema = z.object({
     .nonempty("email cannot be empty")
     .email("please provide a valid email address"),
   salary: z.number().min(1000, "Below minimum wages"),
-  birthday: z.string(),
-  status: z.string(),
+  birthday: z.string().nonempty("Please provide a birthday"),
+  status: z.string().optional(),
   avatar: z.string().optional(),
 });
 
@@ -78,7 +78,7 @@ const Modal = () => {
         className="overlay absolute inset-0 bg-gray-500 opacity-20"
         onClick={closeModal}
       ></div>
-      <div className="modal-container shadow-lg shadow-green-300 rounded-2xl relative z-[2] bg-white min-w-[50vw] min-h-[50vh] ">
+      <div className="modal-container md:p-6 shadow-lg shadow-green-300 rounded-2xl relative z-[2] bg-white w-[90%] max-w-[600px] ">
         <div
           onClick={closeModal}
           className="absolute cursor-pointer right-3 top-3"
@@ -217,7 +217,7 @@ const Modal = () => {
             <button
               type="submit"
               disabled={!isValid}
-              className="flex justify-center text-md w-2/6 bg-blue-500 text-white px-4 py-2 
+              className="flex justify-center text-md mt-3 p-5 w-[200px] bg-blue-500 text-white px-4 py-2 
                         border rounded-md hover:bg-gray-50 hover:border-blue-500 hover:text-blue-500 
                         disabled:opacity-70 disabled:hover:text-white disabled:bg-gray-500 disabled:hover:bg-gray-500"
             >
@@ -230,7 +230,7 @@ const Modal = () => {
             <button
               type="submit"
               disabled={!isValid}
-              className="flex justify-center text-md w-2/6 bg-green-500 text-white px-4 py-2 
+              className="flex justify-center text-md mt-3 p-5 w-[200px] bg-green-500 text-white px-4 py-2 
                         border rounded-md hover:bg-gray-50 hover:border-green-500 hover:text-green-500 
                         disabled:opacity-70 disabled:hover:text-white disabled:bg-gray-500 disabled:hover:bg-gray-500"
             >

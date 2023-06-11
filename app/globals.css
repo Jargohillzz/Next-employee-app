@@ -10,3 +10,8 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+.scrollbar::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}

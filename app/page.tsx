@@ -47,7 +47,7 @@ const Home = () => {
           <div className={` ${isOpen ? "" : "hidden"}`}>
             <Modal />
           </div>
-          <div className=" overflow-x-auto">
+          <div className=" overflow-x-auto scrollbar">
             <Table />
           </div>
         </main>

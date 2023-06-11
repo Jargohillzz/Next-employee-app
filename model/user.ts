@@ -1,4 +1,5 @@
 import { Schema, models, model } from "mongoose";
+import { type } from "os";
 
 export type UserSchema = {
   name: string;
@@ -6,7 +7,7 @@ export type UserSchema = {
   email: string;
   salary: number;
   date: string;
-  status: string;
+  status?: string | null;
   _id?: string;
   _v?: number;
 };
@@ -17,7 +18,10 @@ const userSchema = new Schema<UserSchema>({
   email: String,
   salary: Number,
   date: String,
-  status: String,
+  status: {
+    type: String,
+    default: "Active",
+  },
 });
 
 const Users = models.user || model("user", userSchema);

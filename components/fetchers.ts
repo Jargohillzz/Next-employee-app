@@ -8,7 +8,7 @@ export type BodyProp = {
   email: string;
   salary: number;
   date: string;
-  status: string;
+  status?: string | null;
 };
 
 export async function fetchUsers() {
